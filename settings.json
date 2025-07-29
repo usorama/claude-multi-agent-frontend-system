@@ -1,0 +1,46 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /Users/umasankrudhya/Projects/virtual-tutor/.claude/hooks/prompt_validator.py"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [],
+    "PostToolUse": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /Users/umasankrudhya/Projects/virtual-tutor/.claude/hooks/project_intelligence.py --learn --metrics"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /Users/umasankrudhya/Projects/virtual-tutor/.claude/hooks/notification_filter.py"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /Users/umasankrudhya/Projects/virtual-tutor/.claude/hooks/session_analyzer.py --generate-insights"
+          }
+        ]
+      }
+    ]
+  }
+}
